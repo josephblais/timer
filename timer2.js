@@ -16,6 +16,16 @@ process.stdin.on('data', (key) => {
         console.log(`You're gonna hear a boop after 1 second`);
       } else {
         console.log(`You're gonna hear a boop after ${key} seconds`);
+        let countdown = parseInt(key);
+        let countup = 1000;
+        while (countdown > 1) {
+          setTimeout(() => {
+            console.log("Wait for it...");
+          }, countup);
+          countdown -= 1;
+          countup += 1000;
+        }
+        countdown = parseInt(key);
       }
       setTimeout(() => {
         process.stdout.write('\x07');
